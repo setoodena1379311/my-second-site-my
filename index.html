@@ -8,22 +8,24 @@
 
 <style>
 
+/* ===== BASIC ===== */
 body {
 margin: 0;
 font-family: tahoma;
 background: #f5f7fb;
+color: #333;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 20px;
+padding: 15px 30px;
 background: white;
-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 position: sticky;
 top: 0;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 header a {
@@ -36,12 +38,12 @@ header a:hover {
 color: #0d6efd;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 60px;
+padding: 60px 40px;
 }
 
 .hero h1 {
@@ -60,51 +62,70 @@ border-radius: 20px;
 box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* BUTTON */
-button {
+/* ===== BUTTON ===== */
+.btn {
 background: #0d6efd;
 color: white;
 border: none;
-padding: 12px 25px;
+padding: 12px 20px;
 border-radius: 10px;
 cursor: pointer;
 transition: 0.3s;
+text-decoration: none;
+display: inline-block;
 }
 
-button:hover {
+.btn:hover {
 transform: scale(1.05);
 background: #0b5ed7;
 }
 
-/* SERVICES */
-.services {
+/* ===== SECTIONS ===== */
+section {
+padding: 60px 30px;
 text-align: center;
-padding: 50px;
 }
 
+/* ===== CARDS ===== */
 .card {
-display: inline-block;
 background: white;
 padding: 20px;
 margin: 10px;
+display: inline-block;
+width: 220px;
 border-radius: 15px;
 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== BLOG ===== */
+.blog .card {
+width: 250px;
+}
+
+/* ===== GALLERY ===== */
+.gallery img {
 width: 200px;
+margin: 10px;
+border-radius: 10px;
+box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
-/* ABOUT */
-.about {
-padding: 50px;
-text-align: center;
-background: white;
+/* ===== FORM ===== */
+input, textarea {
+width: 250px;
+padding: 10px;
+margin: 5px;
+border-radius: 8px;
+border: 1px solid #ccc;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
 background: #0d6efd;
 color: white;
 text-align: center;
 padding: 15px;
+margin-top: 30px;
 }
 
 </style>
@@ -113,35 +134,39 @@ padding: 15px;
 
 <body>
 
+<!-- HEADER -->
 <header>
 <div><b>دکتر نسترن ستوده ملاشاهی</b></div>
 
 <nav>
-<a href="#">خانه</a>
-<a href="#">خدمات</a>
-<a href="#">درباره</a>
-<a href="#">تماس</a>
+<a href="#services">خدمات</a>
+<a href="#blog">مقالات</a>
+<a href="#gallery">گالری</a>
+<a href="#contact">تماس</a>
 </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 
 <div>
 <h1>متخصص پوست، مو و زیبایی</h1>
-<p>ارائه خدمات تخصصی با جدیدترین تجهیزات روز دنیا</p>
+<p>ارائه خدمات حرفه‌ای با جدیدترین تجهیزات روز دنیا</p>
 
-<button onclick="alert('درخواست شما ثبت شد')">
-رزرو نوبت
-</button>
+<a class="btn" href="tel:09388981564">تماس مستقیم</a>
+
+<a class="btn" href="https://wa.me/989388981564" target="_blank">
+واتساپ
+</a>
 </div>
 
 <img src="doctor.jpg" alt="doctor">
 
 </section>
 
-<section class="services">
-
-<h2>خدمات ما</h2>
+<!-- SERVICES -->
+<section id="services">
+<h2>خدمات</h2>
 
 <div class="card">بوتاکس</div>
 <div class="card">تزریق ژل</div>
@@ -149,17 +174,57 @@ padding: 15px;
 
 </section>
 
-<section class="about">
+<!-- BLOG -->
+<section id="blog" class="blog">
+<h2>مقالات پزشکی</h2>
 
-<h2>درباره پزشک</h2>
-<p>
-دکتر نسترن ستوده ملاشاهی با سال‌ها تجربه در حوزه زیبایی فعالیت می‌کند.
-</p>
+<div class="card">
+<h3>مراقبت از پوست</h3>
+<p>روش‌های ساده برای سلامت پوست</p>
+</div>
+
+<div class="card">
+<h3>جوانسازی</h3>
+<p>روش‌های جدید زیبایی</p>
+</div>
+
+<div class="card">
+<h3>لیزر</h3>
+<p>قبل و بعد از لیزر</p>
+</div>
 
 </section>
 
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+<h2>گالری تصاویر</h2>
+
+<img src="img1.jpg">
+<img src="img2.jpg">
+<img src="img3.jpg">
+
+</section>
+
+<!-- BOOKING -->
+<section id="contact">
+<h2>رزرو نوبت</h2>
+
+<input placeholder="نام شما">
+<br>
+<input placeholder="شماره تماس">
+<br>
+<textarea placeholder="توضیحات"></textarea>
+<br>
+
+<button class="btn" onclick="alert('درخواست شما ثبت شد')">
+ارسال درخواست
+</button>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
-تمام حقوق محفوظ است © 2026 - نسترن ستوده ملاشاهی
+تمام حقوق محفوظ است © نسترن ستوده ملاشاهی
 </footer>
 
 </body>
